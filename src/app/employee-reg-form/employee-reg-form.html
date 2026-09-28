@@ -1,0 +1,67 @@
+<p>employee-reg-form works!</p>
+
+<h1>Employee Form Validation</h1>
+<hr />
+<form [formGroup]="employeeForm" (ngSubmit)="submitFunction()">
+  <fieldSet>
+    <legend>Employee details</legend>
+
+    Employee ID: <input type="number" formControlName="empid" />
+    @if (employeeForm.get('empid')?.invalid && employeeForm.get('empid')?.dirty) {
+      <span class="error"> Password should be in correct format.</span>
+    }
+    <br /><br />
+
+    Employee Name:<input type="text" formControlName="empname" />
+    @if (employeeForm.get('empname')?.invalid && employeeForm.get('empname')?.dirty) {
+      <span class="error"> Password should be in correct format.</span>
+    }
+    <br /><br />
+
+    Email:<input type="email" formControlName="email" />
+    @if (employeeForm.get('email')?.invalid && employeeForm.get('email')?.dirty) {
+      <span class="error"> Password should be in correct format.</span>
+    }
+    <br /><br />
+
+    <select formControlName="department">
+      <option value="">-- Select Department --</option>
+      <option value="IT">IT</option>
+      <option value="HR">HR</option>
+    </select>
+    @if (employeeForm.get('department')?.invalid && employeeForm.get('department')?.dirty) {
+      <span class="error"> Password should be in correct format.</span>
+    }
+    <br /><br />
+
+    Salary:<input type="number" formControlName="salary" />
+    @if (employeeForm.get('department')?.invalid && employeeForm.get('department')?.dirty) {
+      <span class="error"> Password should be in correct format.</span>
+    }
+    <br /><br />
+
+    Joining Date:<input type="date" formControlName="joiningdate" />
+    @if (employeeForm.get('joiningdate')?.invalid && employeeForm.get('joiningdate')?.dirty) {
+      <span class="error"> Password should be in correct format.</span>
+    }
+    <br /><br />
+
+    <input type="radio" value="Male" formControlName="gender" />
+    Male
+
+    <input type="radio" value="Female" formControlName="gender" />
+    Female
+    @if (employeeForm.get('radio')?.invalid && employeeForm.get('radio')?.dirty) {
+      <span class="error"> Password should be in correct format.</span>
+    }
+    <br /><br />
+
+    <textarea formControlName="address"></textarea>
+    @if (employeeForm.get('address')?.invalid && employeeForm.get('address')?.dirty) {
+      <span class="error"> Password should be in correct format.</span>
+    }
+    <br /><br />
+
+    <button type="submit" [disabled]="employeeForm.invalid">click</button>
+  </fieldSet>
+</form>

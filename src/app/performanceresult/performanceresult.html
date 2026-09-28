@@ -1,0 +1,22 @@
+<p>performanceresult works!</p>
+
+<h1>Employee Details</h1>
+<hr />
+<table border="25">
+  <thead>
+    <tr>
+      <th>S.No.</th>
+      <th>Employee Name</th>
+      <th>Performance Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of employees; track $index; let i = $index) {
+      <tr>
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.grade | performance }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

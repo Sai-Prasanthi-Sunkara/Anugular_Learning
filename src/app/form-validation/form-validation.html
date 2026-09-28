@@ -1,0 +1,56 @@
+<p>form-validation works!</p>
+
+<h3>Angular Form Validations using Reactive Forms</h3>
+<hr />
+
+<form [formGroup]="customerForm" (ngSubmit)="submitClick()">
+  First Name :
+  <input type="text" formControlName="fname" />
+  @if (customerForm.get('fname')?.invalid && customerForm.get('fname')?.dirty) {
+    <span class="error"> First Name is required. </span>
+  }
+  <br /><br />
+
+  Last Name :
+  <input type="text" formControlName="lname" />
+
+  @if (customerForm.get('lname')?.invalid && customerForm.get('lname')?.dirty) {
+    <span class="error"> First Name is required. </span>
+  }
+  <br /><br />
+
+  City Name : <input formControlName="city" />
+
+  @if (customerForm.get('city')?.invalid && customerForm.get('city')?.dirty) {
+    <span class="error"> No. of characters should be in between 3 and 10 </span>
+  }
+  <br /><br />
+
+  E-mail :
+  <input formControlName="email" />
+
+  @if (customerForm.get('email')?.invalid && customerForm.get('email')?.dirty) {
+    <span class="error"> Enter proper e-mail id </span>
+  }
+  <br /><br />
+
+  Pincode :
+  <input formControlName="pincode" />
+
+  @if (customerForm.get('pincode')?.invalid && customerForm.get('pincode')?.dirty) {
+    <span class="error"> Pincode should be six digits.</span>
+  }
+
+  <br /><br />
+
+  Password :
+  <input formControlName="password" />
+
+  @if (customerForm.get('password')?.invalid && customerForm.get('password')?.dirty) {
+    <span class="error"> Password should be in correct format.</span>
+  }
+
+  <br /><br />
+
+  <button type="submit" [disabled]="customerForm.invalid">Register</button>
+</form>

@@ -1,0 +1,23 @@
+table {
+    background-color: aqua;
+    margin-inline: auto;
+    text-align: center;
+}
+
+td {
+    transition: transform 0.5s ease;
+}
+
+td:hover {
+    background-color: aquamarine;
+    transform: scale(1.1);
+}
+
+td:hover body {
+    background-color: burlywood;
+}
+
+h1 {
+    color: chartreuse;
+    text-align: center;
+}
