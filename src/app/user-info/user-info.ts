@@ -1,9 +1,10 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, NgFor } from '@angular/common';
+import { Component} from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-info',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './user-info.html',
   styleUrl: './user-info.css',
 
@@ -20,5 +21,20 @@ export class UserInfo {
     { id: 2, name: "Mouse", price: 800, quantity: 5 },
     { id: 3, name: "Keyboard", price: 1500, quantity: 3 }
 ];
+total: number=0;
+// calculateTotal() {
+constructor(){
+    //  total: number = 0;
+
+    for (let index = 0; index < this.products.length; index++) {
+      this.total += this.products[index].price *
+               this.products[index].quantity;
+    }
+
+    console.log(this.total);
+    console.log("hi this is for the testing");
+
+}
+
 
 }

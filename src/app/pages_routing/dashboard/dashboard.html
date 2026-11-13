@@ -1,0 +1,53 @@
+<h2>Dashboard</h2>
+<br />
+
+<div class="">
+  <nav
+    class="w-1/4 flex flex-row gap-3 border-2 border-dashed border-gray-200 m-4 p-10 px-10 min-h-[400px]"
+  >
+    <ul class="flex flex-col gap-5" font-mono text-xl>
+      <li>
+        <a
+          routerLink="dashboardhom"
+          routerLinkActive="text-blue-700 font-bold"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Dashboard Home</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="profile"
+          routerLinkActive="text-blue-700 font-bold"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Profile
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="settings"
+          routerLinkActive="text-blue-700 font-bold"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Settings</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="orders"
+          routerLinkActive="text-blue-700 font-bold"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Orders</a
+        >
+      </li>
+    </ul>
+    <!-- <a
+    routerLink="/pages_routing/about"
+    routerLinkActive="text-blue-700 font-bold"
+    [routerLinkActiveOptions]="{ exact: true }"
+  > -->
+
+    <div class="border-l"></div>
+
+    <div class="flex-1 justify-center items-center"><router-outlet> </router-outlet></div>
+  </nav>
+</div>

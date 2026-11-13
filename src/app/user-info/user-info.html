@@ -1,6 +1,36 @@
+<!-- typescript basics -->
 <p>user-info works!</p>
 <div>
   <p>User Name:{{ uname }}</p>
   <p>Age:{{ age }}</p>
   <p>IsValid:{{ isvalid }}</p>
 </div>
+
+<!-- how to use the directives ex: *ngzFor and * ngIf  -->
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.id }}-{{ product.name }} -{{ product.price }} -{{ product.quantity }}
+  </li>
+</ul>
+<h4>the product whoes price is greater than 1000</h4>
+
+<div *ngFor="let product of products">
+  <p *ngIf="product.price > 1000">
+    {{ product.id }}-{{ product.name }} -{{ product.price }} -{{ product.quantity }}
+  </p>
+</div>
+
+<h4>Total value of each product :</h4>
+<div *ngFor="let product of products">
+  {{ product.price * product.quantity }}
+</div>
+
+<!-- Data Bindings -->
+<h4>Total Investory value</h4>
+<div>{{ total }}</div>
+
+<nav class="bg-color-red">
+  <a routerLink="/pages_routing/home"> home</a>
+  <a routerLink="/pages_routing/about"> about</a>
+  <a routerLink="/pages_routing/products">products</a>
+</nav>

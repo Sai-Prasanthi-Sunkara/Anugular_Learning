@@ -1,8 +1,180 @@
-<app-user-info />
-<app-cities-list />
+<!-- <app-user-info />
+<app-home></app-home> -->
+
+<!-- <app-cities-list />
 <app-login />
 <app-performanceresult />
 <app-form-validation />
 <app-employee-reg-form />
 <app-product-info-getter />
 <app-test-component />
+<app-bak-account></app-bak-account> -->
+
+<!-- routing placeholder / container -->
+
+<!-- <app-user-info /> -->
+<!-- <nav class="padding-10px margin-bottom-10px">
+  <a routerLink="/" routerLinkActive="font-bold text-blue-700"> home</a> <br />
+  <a routerLink="/pages_routing/about" routerLinkActive="font-bold text-blue-700"> about</a> <br />
+  <a routerLink="/pages_routing/products" routerLinkActive="text-blue-700 font-bold">products</a>
+</nav>
+<router-outlet></router-outlet> -->
+<h3 class="text-center bottom-2.5 border-b border-dashed border-grey-500 p-4">
+  Navigating to the components using the routingLink
+</h3>
+
+<nav class="padding-10px margin-bottom-10px flex justify-around p-2">
+  <a
+    routerLink="/pages_routing/home"
+    routerLinkActive="text-blue-700 font-bold"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    home</a
+  >
+  <br />
+  <a
+    routerLink="/pages_routing/about"
+    routerLinkActive="text-blue-700 font-bold"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    about</a
+  >
+  <br />
+  <a
+    routerLink="/pages_routing/products"
+    routerLinkActive="text-blue-700 font-bold"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >products</a
+  >
+  <br />
+  <a
+    routerLink="/pages_routing/dashboard"
+    routerLinkActive="text-blue-700 font-bold"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >dashboard</a
+  >
+  <br />
+  <a
+    routerLink="/pages_routing/signal"
+    routerLinkActive="text-blue-700 font-bold"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >signal</a
+  >
+</nav>
+<div
+  class="mx-4 w-auto min-h-[calc(10vh-135px)] border border-dashed border-gray-500 flex items-center p-4"
+>
+  <router-outlet> </router-outlet>
+</div>
+<p class="text-amber-300 align-middle">directives</p>
+<!-- directives -->
+
+<!-- 1.Structural Directives -->
+<!-- *ngIf used to display the text based on the condition -->
+<p *ngIf="ngif">ngif directive testing</p>
+<!-- *ngFor used to display the collection of array -->
+<ul>
+  <li *ngFor="let item of arr1">{{ item }}</li>
+</ul>
+
+<!-- 1.Attribute Directives change the behavior or apperance of an elements  basedon the con-->
+<!-- ngClass used to style the html elememnts  based on the condition -->
+<h3 [ngClass]="isActive ? 'active' : 'inactive'">ngClass condition based styles</h3>
+
+<!-- ngStyle used to style the  html using inlinestyle dynamic style -->
+<p [ngStyle]="{ color: textColor }">ngStyle Text</p>
+
+<!-- ngSwitch case -->
+<div [ngSwitch]="status">
+  <p *ngSwitchCase="'active'">Active</p>
+  <p *ngSwitchCase="'inactive'">Inactive</p>
+  <p *ngSwitchDefault>Unknow case</p>
+</div>
+
+<!-- moderen corntrol flow -->
+<br />
+<p>moderen corntrol flow</p>
+<br />
+<!-- @if -->
+<p>if,elseif and else</p>
+@if (role == 'admin') {
+  <p>welcome admin</p>
+} @else if (role == 'user') {
+  <p>welcome user</p>
+} @else {
+  <p>please login</p>
+}
+<br />
+<p>for</p>
+<!-- @for object iteration by converting it into the array -->
+
+<ul>
+  <!-- here we using the keyvalue pipe for object iteration note which sorts the bject values -->
+  @for (item of array | keyvalue; track item.key) {
+    <li>
+      <p>{{ item.key }}:{{ item.value }}</p>
+    </li>
+  } @empty {
+    <p>no values found</p>
+  }
+</ul>
+
+<!-- @switch  -->
+<br />
+<p>switch</p>
+@switch (status) {
+  @case ('active') {
+    <p>user is active</p>
+  }
+  @case ('inactive') {
+    <p>user is inactive</p>
+  }
+  @default {
+    <p>Unknow status</p>
+  }
+}
+
+<br />
+<p>Template expression operators</p>
+<!-- comparison operator -->
+
+<p>{{ price < quantity }}</p>
+
+<!-- ternary opearor -->
+<p>{{ price > 100 ? 'expensive' : 'offrdable' }}</p>
+
+<!-- nullish coalesing operator-->
+<p>{{ name ?? 'sai' }}</p>
+
+<!-- Template  $event events and event modifiers -->
+
+<p>button click event</p>
+<button class="bg-blue-700 m-5 px-6 py-6 text-white rounded" (click)="showMsg($event)">
+  click me
+</button>
+<p>{{ msg }}</p>
+
+<br />
+<p>input event</p>
+<input
+  type="text"
+  name="text"
+  id="text"
+  placeholder="enter text"
+  inputmode="email"
+  (input)="showMethod($event)"
+  class="border-2"
+/>
+
+<!-- keyboard events -->
+<br />
+<p>keyboard events</p>
+
+<input
+  type="text"
+  name=""
+  id=""
+  (keydown)="pressedKey($event)"
+  class="border-2"
+  (keydown.enter)="search()"
+/>

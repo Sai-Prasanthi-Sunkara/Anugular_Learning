@@ -1,0 +1,21 @@
+<div class="border-dashed m-4 border-2 border-gray-50 px-3 py-2 text-center m-auto left-0 right-0">
+  <div class="flex flex-col justify-center items-center text-center font-mono">
+    <h1>Welcome To Signal Component</h1>
+
+    <h2 class="text-3xl font-bold">Cart Total:{{ cartService.total() }}</h2>
+    <div class="flex flex-row justify-center items-center text-center font-mono">
+      <button
+        class="bg-green-50 rounded-2xl px-2 py-2 m-5"
+        (click)="cartService.increaseQuantity()"
+      >
+        Increase Qunatity
+      </button>
+      <button class="bg-green-50 rounded-2xl px-2 py-2 m-5" (click)="cartService.changePrice()">
+        Change Price
+      </button>
+      <button class="bg-green-50 rounded-2xl px-2 py-2 m-5" (click)="cartService.reset()">
+        Reset
+      </button>
+    </div>
+  </div>
+</div>
