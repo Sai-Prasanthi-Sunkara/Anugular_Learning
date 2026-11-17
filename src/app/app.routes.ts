@@ -3,7 +3,7 @@ import { Home } from './pages_routing/home/home';
 import { About } from './pages_routing/about/about';
 import { Products } from './pages_routing/products/products';
 import { UserInfo } from './user-info/user-info';
-
+import{Child} from './pages_routing/child/child';
 import { Component, signal } from '@angular/core';
 import { Register } from './pages_routing/register/register';
 import { Login } from './pages_routing/login/login';
@@ -19,6 +19,7 @@ import { canActivateChildGuardGuard } from './guards/can-activate-child-guard-gu
 import { canDeactivateauthGuard } from './guards/can-deactivateauth-guard';
 import { canMatchauthGuard } from './guards/can-matchauth-guard';
 import { Signal } from './pages_routing/signal/signal';
+import { Parent } from './pages_routing/parent/parent';
 
 export const routes: Routes = [
   // routing paths
@@ -31,7 +32,7 @@ export const routes: Routes = [
   // default path settings
   {
     path: '',
-    redirectTo: 'pages_routing/signal',
+    redirectTo: 'pages_routing/parent',
     pathMatch: 'full',
   },
   {
@@ -64,6 +65,14 @@ export const routes: Routes = [
     path: 'pages_routing/product-details/:id',
     canMatch: [canMatchauthGuard],
     component: ProductDetails,
+  },
+  {
+    path:'pages_routing/parent',
+    component: Parent,
+  },
+  {
+    path:'pages_routing/child',
+    component: Child,
   },
   {
     path: 'pages_routing/dashboard',

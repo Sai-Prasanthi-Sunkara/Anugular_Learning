@@ -1,0 +1,21 @@
+<h1>Welcome To Child Component</h1>
+<h2 class="text-3xl font-bold">Child Component</h2>
+<!--input()signal: using input signal receive the data from parent to child -->
+<h3>input()signal: using input signal receive the data from parent to child</h3>
+<p>Hello, {{ username() }}!</p>
+
+<!-- output()signal: using output signal parent notifies the changes in the child component which is avoids the manutal mataince of this process using the ouput()signal -->
+<h3>
+  parent notifies the changes in the child component which is avoids the manutal mataince of this
+  process using the ouput()signal
+</h3>
+<button class="bg-green-50 rounded-2xl px-2 py-2 m-3" (click)="onSaved()">Notify Parent</button>
+<!-- model()signal: using model signal for both sharing the data and update the values in both directions Parent -> <- child -->
+<h3>
+  Model()signal for both sharing the data and update the values in both directions Parent -> <-
+  child
+</h3>
+<p>Quantity: {{ quantity() }}</p>
+<button class="bg-green-50 rounded-1xl px-2 py-2 m-3" (click)="quantity.update((v) => v + 1)">
+  Increase Quantity
+</button>
