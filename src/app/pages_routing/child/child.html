@@ -3,7 +3,8 @@
 <!--input()signal: using input signal receive the data from parent to child -->
 <h3>input()signal: using input signal receive the data from parent to child</h3>
 <p>Hello, {{ username() }}!</p>
-
+<p>name: {{ name() }}</p>
+<p>sharedData: {{ cartService.as_Read_Only() }}</p>
 <!-- output()signal: using output signal parent notifies the changes in the child component which is avoids the manutal mataince of this process using the ouput()signal -->
 <h3>
   parent notifies the changes in the child component which is avoids the manutal mataince of this
@@ -19,3 +20,5 @@
 <button class="bg-green-50 rounded-1xl px-2 py-2 m-3" (click)="quantity.update((v) => v + 1)">
   Increase Quantity
 </button>
+
+<p>Child Message: {{ msg() }}</p>

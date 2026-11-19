@@ -12,6 +12,13 @@
       <h1>Welcome To Parent Component</h1>
       <h2 class="text-3xl font-bold">Parent Component</h2>
       <p>Quantity_Parent: {{ quantity_parent() }}</p>
+      <p>Username: {{ userName_parent }}</p>
+      <button class="bg-green-50 rounded-2xl px-2 py-2 m-3" (click)="resetChildMsg()">
+        resetChildMsg
+      </button>
+      <button class="bg-green-50 rounded-2xl px-2 py-2 m-3" (click)="showChildMsg()">
+        showChildMsg
+      </button>
     </div>
   </div>
   <div

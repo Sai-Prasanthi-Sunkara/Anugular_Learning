@@ -1,5 +1,6 @@
 import { Component, input, model, output, signal } from '@angular/core';
-
+import { CartService } from '../../service/cart-service';
+import { inject } from '@angular/core';
 @Component({
   selector: 'app-child',
   imports: [],
@@ -20,4 +21,20 @@ this.name.set('Jane');  //set the child component name signal value to 'Jane' wh
   // model()signal for both sharing the data and update the values in both directions Parent -> <- child 
 quantity=model<number>(0);
 
+
+//  injecting the cart service to share the data between the different components
+cartService = inject(CartService);
+// access the shared data from the cart service
+// _sharedData = this.cartService._sharedData; // access the private writable signal from the cart service
+
+
+// ViewChild() signal: using ViewChild() signal parent component can access the child component methods and properties directly without using the input()signal and output()signal
+number=signal<number>(0);
+msg=signal<string>('initial msg from child');
+reset(){
+this.msg.set('msg from parent component');
+}
+showMsg(){
+  this.msg.set('msg from parent component');
+}
 }

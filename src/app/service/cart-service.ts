@@ -24,4 +24,12 @@ export class CartService {
   reset() {
     this.price.set(0);
   }
+
+  // common service data for sharing the data between the different components
+  private _sharedData: WritableSignal<string> = signal('Shared data Between the different components'); // private writable signal to hold the shared data
+  // readonly value=this._sharedData.asReadonly
+  as_Read_Only= this._sharedData.asReadonly(); // public readonly signal to expose the shared data
+  // get sharedData() {
+  //   return this._sharedData;
+  // }
 }
